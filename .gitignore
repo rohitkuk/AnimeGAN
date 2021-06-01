@@ -127,3 +127,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# exclude everything
+dataset/*
+wandb/
+wandb
+
+logs/
+logs
+List.md
+# exception to the rule
+
+!dataset/.gitkeep

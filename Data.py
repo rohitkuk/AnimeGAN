@@ -1,0 +1,52 @@
+
+from kaggle.api.kaggle_api_extended import KaggleApi
+from zipfile import ZipFile
+from tqdm import tqdm
+import os 
+
+
+def pokemon_dataset(args):
+
+
+
+    while not args.kaggle_user:
+        print("\n REQUIRED KAGGLE API USERNAME TO DOWNLOAD KAGGLE DATASET\n")
+        args.kaggle_user = input("KAGGLE USERNAME FROM KAGGLE.JSON")
+
+    while not args.kaggle_key:
+        print("\n REQUIRED KAGGLE API KEY TO DOWNLOAD KAGGLE DATASET\n")
+        args.kaggle_user = input("KAGGLE API KEY FROM KAGGLE.JSON")
+    
+    os.environ['KAGGLE_USERNAME'] = args.kaggle_user
+    os.environ['KAGGLE_KEY'] = args.kaggle_key
+    
+        
+    print("###### Authenticating Kaggle API Dataset #####")
+    api = KaggleApi()
+    api.authenticate()
+
+    # "Better way to check and re download save size and structre in a file and check if full file is there"
+    try:
+        os.remove("pokemonclassification.zip")
+    except:
+        pass
+
+    print("######Downloading Dataset #####")
+    api.dataset_download_files("lantian773030/pokemonclassification", quiet=False)
+
+    print("#######Extracting Dataset #####")
+    with ZipFile(file='pokemonclassification.zip') as zip_file:
+        for file in tqdm(iterable=zip_file.namelist(), total=len(zip_file.namelist())):
+            zip_file.extract(member=file, path='dataset')
+
+    print("#######Deleting Zip File #####")
+    os.remove("pokemonclassification.zip")
+
+
+
+def MNIST_downlaod(args):
+    pass
+
+
+if __name__ == "__main__":
+    pass
