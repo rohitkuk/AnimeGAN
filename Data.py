@@ -7,8 +7,6 @@ import os
 
 def pokemon_dataset(args):
 
-
-
     while not args.kaggle_user:
         print("\n REQUIRED KAGGLE API USERNAME TO DOWNLOAD KAGGLE DATASET\n")
         args.kaggle_user = input("KAGGLE USERNAME FROM KAGGLE.JSON")

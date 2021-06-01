@@ -7,7 +7,6 @@ from torchvision.utils import make_grid
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 import torch.optim as optim
-from yaml import parse
 from model import Discrimiator, Generator, initialize_wieghts
 
 import argparse
@@ -16,6 +15,22 @@ import shutil
 from IPython import get_ipython
 import wandb
 import Data
+
+
+"""
+
+python train.py\
+--wandbkey=89cd42a1a18e81da82539c61e2fc34054bdf2627\
+--projectname=PokeGAN\
+--wandbentity=rohitkuk\
+--tensorboard=True\
+--dataset= pokemon\
+--kaggle_user=rohitkuk\
+--kaggle_key=45cd756a5a4449406b323ae680ac9332\
+--batch_size=32\
+--epoch=5\
+--load_checkpoints=True\
+"""
 
 
 # Read more about this.
@@ -33,7 +48,7 @@ parser.add_argument('--projectname', metavar='projectname', default="DC_GAN",
                     help='Key for Weight and Biases Integration')
 
 
-parser.add_argument('--wandbentity', metavar='wandbentity', default="DC_GAN",
+parser.add_argument('--wandbentity', metavar='wandbentity',
                     help='Entity for Weight and Biases Integration')
 
 
@@ -52,16 +67,12 @@ parser.add_argument('--kaggle_user',default = None,
 parser.add_argument('--kaggle_key', default = None,
                     help = "Kaggle API creds Required to Download Kaggle Dataset")
 
-                    
-parser.add_argument('--epochs', metavar='epochs',    default = 5,
-                    help = "Number Of Epochs to Train")
-                
 
-parser.add_argument('--batch_size', metavar='batch_size',    default = 32,
+parser.add_argument('--batch_size', metavar='batch_size', type=int , default = 32,
                     help = "Batch_Size")
                     
 
-parser.add_argument('--epoch', metavar='epoch',    default = 5,
+parser.add_argument('--epoch', metavar='epoch', type=int ,default = 5,
                     help = "Kaggle API creds Required to Download Kaggle Dataset")
 
 
