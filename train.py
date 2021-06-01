@@ -8,6 +8,7 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 import torch.optim as optim
 from model import Discrimiator, Generator, initialize_wieghts
+import datetime
 
 import argparse
 import os
@@ -18,7 +19,6 @@ import Data
 
 
 """
-
 python train.py\
 --wandbkey=89cd42a1a18e81da82539c61e2fc34054bdf2627\
 --projectname=PokeGAN\
@@ -259,3 +259,6 @@ for j,i in tqdm(enumerate(images)):
 
 ani = animation.ArtistAnimation(fig, ims, interval=1000, repeat_delay=1000, blit=True)
 HTML(ani.to_jshtml())
+f = "animation{}.gif".format(datetime.datetime.now()).replace(":","")
+writergif = animation.PillowWriter(fps=30) 
+ani.save(os.path.join(wandb.run.dir,f), writer=writergif)
