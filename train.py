@@ -85,6 +85,7 @@ args = parser.parse_args()
 # Initiating Wiegh and biases for logging
 
 
+
 shutil.rmtree("logs") if os.path.isdir("logs") else ""
 
 # Hyper Paramerts
@@ -222,7 +223,7 @@ for epoch in range(1, NUM_EPOCHS+1):
 
         # for Tensorboard
 
-        if batch_idx % 50 == 0 :
+        if batch_idx % 30 == 0 :
 
             if args.tensorboard:
                 GAN_gen = generator(FIXED_NOISE)
@@ -252,13 +253,18 @@ matplotlib.rcParams['animation.embed_limit'] = 2**64
 fig = plt.figure(figsize=(8,8))
 plt.axis("off")
 ims = []
+
+
 from matplotlib import animation
 for j,i in tqdm(enumerate(images)):
-  if j+1%5 ==0:
     ims.append([plt.imshow(np.transpose(i,(1,2,0)), animated=True)]) 
+    
 
 ani = animation.ArtistAnimation(fig, ims, interval=1000, repeat_delay=1000, blit=True)
 HTML(ani.to_jshtml())
 f = "animation{}.gif".format(datetime.datetime.now()).replace(":","")
-writergif = animation.PillowWriter(fps=30) 
-ani.save(os.path.join(wandb.run.dir,f), writer=writergif)
+
+from matplotlib.animation import PillowWriter
+
+ani.save(os.path.join(wandb.run.dir,f), writer=PillowWriter(fps=20)) 
+ani.save(f, writer=PillowWriter(fps=20)) 
