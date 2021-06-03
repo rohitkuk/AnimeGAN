@@ -6,7 +6,7 @@ import os
 
 
 def kaggle_dataset(args):
-    
+
     if args.dataset == "pokemon":
         path = 'lantian773030/pokemonclassification'
     
@@ -41,7 +41,7 @@ def kaggle_dataset(args):
     api.dataset_download_files(path, quiet=False)
 
     print("#######Extracting Dataset #####")
-    with ZipFile(file='pokemonclassification.zip') as zip_file:
+    with ZipFile(file=file_name) as zip_file:
         for file in tqdm(iterable=zip_file.namelist(), total=len(zip_file.namelist())):
             zip_file.extract(member=file, path='dataset')
 
