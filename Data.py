@@ -5,7 +5,15 @@ from tqdm import tqdm
 import os 
 
 
-def pokemon_dataset(args):
+def kaggle_dataset(args):
+
+    if args.dataset == "pokemon":
+        path = 'lantian773030/pokemonclassification'
+    
+    elif args.dataset == "anime":
+        path = "arnaud58/ffhq-flickr-faces-align-crop-and-segment"
+    
+    file_name = path.split('/')[-1] + ".zip"
 
     while not args.kaggle_user:
         print("\n REQUIRED KAGGLE API USERNAME TO DOWNLOAD KAGGLE DATASET\n")
@@ -25,12 +33,12 @@ def pokemon_dataset(args):
 
     # "Better way to check and re download save size and structre in a file and check if full file is there"
     try:
-        os.remove("pokemonclassification.zip")
+        os.remove(file_name)
     except:
         pass
 
     print("######Downloading Dataset #####")
-    api.dataset_download_files("lantian773030/pokemonclassification", quiet=False)
+    api.dataset_download_files(path, quiet=False)
 
     print("#######Extracting Dataset #####")
     with ZipFile(file='pokemonclassification.zip') as zip_file:
@@ -38,9 +46,7 @@ def pokemon_dataset(args):
             zip_file.extract(member=file, path='dataset')
 
     print("#######Deleting Zip File #####")
-    os.remove("pokemonclassification.zip")
-
-
+    os.remove(file_name)
 
 def MNIST_downlaod(args):
     pass

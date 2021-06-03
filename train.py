@@ -56,7 +56,7 @@ parser.add_argument('--tensorboard', metavar='tensorboard', type=bool, default=T
                     help='Tensorboard Integration')
 
 
-parser.add_argument('--dataset', choices= ['mnist', 'pokemon'], type=str.lower, required=True,
+parser.add_argument('--dataset', choices= ['mnist', 'pokemon', 'anime'], type=str.lower, required=True,
                     help = "Choose the Dataset From MNIST or Pokemon")
 
 
