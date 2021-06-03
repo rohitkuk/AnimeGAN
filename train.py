@@ -19,17 +19,17 @@ import Data
 
 
 """
-python train.py\
---wandbkey=89cd42a1a18e81da82539c61e2fc34054bdf2627\
---projectname=PokeGAN\
---wandbentity=rohitkuk\
---tensorboard=True\
---dataset= pokemon\
---kaggle_user=rohitkuk\
---kaggle_key=45cd756a5a4449406b323ae680ac9332\
---batch_size=32\
---epoch=5\
---load_checkpoints=True\
+python train.py \
+--wandbkey=89cd42a1a18e81da82539c61e2fc34054bdf2627 \
+--projectname=AnimeGAN \
+--wandbentity=rohitkuk \
+--tensorboard=True \
+--dataset=anime \
+--kaggle_user=rohitkuk \
+--kaggle_key=45cd756a5a4449406b323ae680ac9332 \
+--batch_size=32 \
+--epoch=5 \
+--load_checkpoints=True \
 """
 
 
@@ -117,8 +117,8 @@ Trasforms = transforms.Compose([
 # Prepare Data
 
 # PokeMon Data
-if args.dataset =="pokemon":
-    Data.pokemon_dataset(args)
+if args.dataset !="MNIST":
+    Data.kaggle_dataset(args)
 
 # MNIST Still to Implemet in the Data Module
 if args.dataset =="MNIST":
