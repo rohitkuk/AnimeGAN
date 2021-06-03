@@ -12,7 +12,7 @@ def kaggle_dataset(args):
         out_path = "dataset"
     
     elif args.dataset == "anime":
-        path = "arnaud58/ffhq-flickr-faces-align-crop-and-segment"
+        path = "splcher/animefacedataset"
         try:
             os.mkdir('Images')
         except:
