@@ -18,23 +18,6 @@ import wandb
 from src import Data
 
 
-
-"""
-python src/train.py \
-
---wandbkey=89cd42a1a18e81da82539c61e2fc34054bdf2627 \
---projectname=AnimeGAN \
---wandbentity=rohitkuk \
---tensorboard=True \
---dataset=anime \
---kaggle_user=rohitkuk \
---kaggle_key=45cd756a5a4449406b323ae680ac9332 \
---batch_size=32 \
---epoch=5 \
---load_checkpoints=True \
-"""
-
-
 # Read more about this.
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 

@@ -135,6 +135,8 @@ wandb
 .vscode/*
 .vscode
 
+run.sh
+
 .DS_Store
 
 List.md
