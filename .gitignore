@@ -133,6 +133,8 @@ dataset/*
 wandb/
 wandb
 .vscode/
+.vscode
+
 .DS_Store
 
 logs/
