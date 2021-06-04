@@ -129,17 +129,15 @@ dmypy.json
 .pyre/
 
 # exclude everything
-dataset/*
+data/*
 wandb/
 wandb
-.vscode/
+.vscode/*
 .vscode
 
 .DS_Store
 
-logs/
-logs
 List.md
 # exception to the rule
 
-!dataset/.gitkeep
+!data/.gitkeep

@@ -7,7 +7,7 @@ from torchvision.utils import make_grid
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 import torch.optim as optim
-from model import Discrimiator, Generator, initialize_wieghts
+from src.model import Discrimiator, Generator, initialize_wieghts
 import datetime
 
 import argparse
@@ -15,11 +15,13 @@ import os
 import shutil
 from IPython import get_ipython
 import wandb
-import Data
+from src import Data
+
 
 
 """
-python train.py \
+python src/train.py \
+
 --wandbkey=89cd42a1a18e81da82539c61e2fc34054bdf2627 \
 --projectname=AnimeGAN \
 --wandbentity=rohitkuk \
@@ -130,7 +132,7 @@ if args.dataset =="MNIST":
 
 
 # Data Loaders
-train_dataset = datasets.ImageFolder(root = 'dataset', transform=Trasforms)
+train_dataset = datasets.ImageFolder(root = 'data', transform=Trasforms)
 train_loader   = DataLoader(train_dataset, batch_size = BATCH_SIZE, shuffle=True, drop_last=True)
 
 if args.wandbkey :
@@ -224,7 +226,8 @@ for epoch in range(1, NUM_EPOCHS+1):
         # for Tensorboard
 
         if batch_idx % 30 == 0 :
-
+            torch.save(generator.state_dict(), os.path.join("model", GEN_CHECKPOINT))
+            torch.save(discremenator.state_dict(), os.path.join("model", DISC_CHECKPOINT))
             if args.tensorboard:
                 GAN_gen = generator(FIXED_NOISE)
                 img_grid_real = make_grid(data[:32], normalize=True)
