@@ -4,7 +4,7 @@ PyTorch implementation of DCGAN introduced in the paper: [Unsupervised Represent
 Generative Adversarial Networks](https://arxiv.org/abs/1511.06434), Alec Radford, Luke Metz, Soumith Chintala.
 
 <p align="center">
-<img src="images/outgif.gif" title="Generated Data Animation" alt="Generated Data Animation">
+<img src="assets/outgif.gif" title="Generated Data Animation" alt="Generated Data Animation">
 </p>
 
 ## Introduction
@@ -20,7 +20,7 @@ for the downsampling and the upsampling respectively.
 
 **Generator architecture of DCGAN**
 <p align="center">
-<img src="images/DCGAN.png" title="DCGAN Generator" alt="DCGAN Generator">
+<img src="assets/DCGAN.png" title="DCGAN Generator" alt="DCGAN Generator">
 </p>
 
 **Network Design of DCGAN:**
@@ -61,8 +61,8 @@ By default, GPU is used for training if available.
 </p>
 <i>D: Discriminator, G: Generator</i>
 
-## Generating New Images
-To generate new unseen images, run **`generate.py`**.
+## Run Traaining
+
 ```sh
 python train.py \
     --wandbkey={{WANDB KEY}} \
@@ -77,11 +77,7 @@ python train.py \
     --load_checkpoints=True \
 
 ```
-**Generated Images**
-<p align="center">
-  <i>After Epoch 1:</i> <img src="images/Generated_Epoch_1.png" title="Generated Images after 1st Epoch" alt="Generated Images after 1st Epoch">
-  <i>After Epoch 10:</i> <img src="images/Generated_Epoch_10.png" title="Generated Images after 10th Epoch" alt="Generated Images after 10th Epoch">
-</p>
+
 
 ## References
 1. **Alec Radford, Luke Metz, Soumith Chintala.** *Unsupervised representation learning with deep convolutional 

@@ -132,6 +132,8 @@ dmypy.json
 dataset/*
 wandb/
 wandb
+.vscode/
+.DS_Store
 
 logs/
 logs
