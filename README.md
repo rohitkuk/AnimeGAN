@@ -117,5 +117,5 @@ Sherjil Ozair, Aaron Courville, Yoshua Bengio.** *Generative adversarial nets.* 
 [license-shield]: https://img.shields.io/github/license/rohitkuk/AnimeGAN.svg?style=for-the-badge
 [license-url]: https://github.com/rohitkuk/AnimeGAN/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[linkedin-url]: https://linkedin.com/in/rohitkuk
 [product-screenshot]: images/screenshot.png
