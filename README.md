@@ -61,6 +61,30 @@ By default, GPU is used for training if available.
 </p>
 <i>D: Discriminator, G: Generator</i>
 
+## Directory Structre
+
+```
+.
+├── assets
+├── data
+├── docs
+├── logs
+├── pipelines
+├── research
+├── src
+│   ├── Data.py
+│   └── model.py
+├── tests
+├── weights
+├── LICENSE
+├── README.md
+├── requirements.txt
+└── train.py
+
+```
+
+
+
 ## Run Traaining
 
 ```sh
@@ -77,6 +101,8 @@ python train.py \
     --load_checkpoints=True \
 
 ```
+
+
 
 
 ## References

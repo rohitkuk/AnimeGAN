@@ -209,8 +209,8 @@ for epoch in range(1, NUM_EPOCHS+1):
         # for Tensorboard
 
         if batch_idx % 30 == 0 :
-            torch.save(generator.state_dict(), os.path.join("model", GEN_CHECKPOINT))
-            torch.save(discremenator.state_dict(), os.path.join("model", DISC_CHECKPOINT))
+            torch.save(generator.state_dict(), os.path.join("weights", GEN_CHECKPOINT))
+            torch.save(discremenator.state_dict(), os.path.join("weights", DISC_CHECKPOINT))
             if args.tensorboard:
                 GAN_gen = generator(FIXED_NOISE)
                 img_grid_real = make_grid(data[:32], normalize=True)
