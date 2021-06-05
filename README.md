@@ -4,6 +4,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+![image title](https://rushter.com/counter.svg)
 
 # AnimeGAN - Deep Convolutional Generative Adverserial Network
 
@@ -107,6 +108,7 @@ Sherjil Ozair, Aaron Courville, Yoshua Bengio.** *Generative adversarial nets.* 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/rohitkuk/AnimeGAN.svg?style=for-the-badge
 [contributors-url]: https://github.com/rohitkuk/AnimeGAN/graphs/contributors
+
 [forks-shield]: https://img.shields.io/github/forks/rohitkuk/AnimeGAN.svg?style=for-the-badge
 [forks-url]: https://github.com/rohitkuk/AnimeGAN/network/members
 [stars-shield]: https://img.shields.io/github/stars/rohitkuk/AnimeGAN.svg?style=for-the-badge
