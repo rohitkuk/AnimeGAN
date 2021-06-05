@@ -68,7 +68,6 @@ python train.py \
     --batch_size=32 \
     --epoch=5 \
     --load_checkpoints=True \
-
 ```
 
 
@@ -104,7 +103,7 @@ Sherjil Ozair, Aaron Courville, Yoshua Bengio.** *Generative adversarial nets.* 
 
 
 
-<!-- MARKDOWN LINKS & IMAGES -->
+<!-- MARKDOWN LINKS & IMAGES --> 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/rohitkuk/AnimeGAN.svg?style=for-the-badge
 [contributors-url]: https://github.com/rohitkuk/AnimeGAN/graphs/contributors
