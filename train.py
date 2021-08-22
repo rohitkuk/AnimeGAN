@@ -254,3 +254,6 @@ from matplotlib.animation import PillowWriter
 
 ani.save(os.path.join(wandb.run.dir,f), writer=PillowWriter(fps=20)) 
 ani.save(f, writer=PillowWriter(fps=20)) 
+
+
+# is this change got recorde
